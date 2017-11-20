@@ -5,21 +5,19 @@ using namespace std;
 
 int main(){
   Pila_max p;
+
+  p.push(2);
+  p.push(1);
+  p.push(3);
+  p.push(0);
+  p.push(4);
+  p.push(10);
+
+  cout << "Elemento: " << p.top().ele << " Máximo: " << p.top().maximo << endl; p.pop();
+  cout << "Elemento: " << p.top().ele << " Máximo: " << p.top().maximo << endl; p.pop();
+  cout << "Elemento: " << p.top().ele << " Máximo: " << p.top().maximo << endl; p.pop();
+  cout << "Elemento: " << p.top().ele << " Máximo: " << p.top().maximo << endl; p.pop();
+  cout << "Elemento: " << p.top().ele << " Máximo: " << p.top().maximo << endl; p.pop();
+  cout << "Elemento: " << p.top().ele << " Máximo: " << p.top().maximo << endl; p.pop();
   
-  int i;
-  for(i=10; i>=0; i--)
-    p.poner(i);
-
-  // while(!p.datos.vacia()){
-  //   cout << p.datos.frente().ele << endl;
-  //   p.datos.quitar();
-  // }
-
-
-  while(!p.vacia()){
-    elemento x= p.tope();
-    cout << x.ele << endl;
-    p.quitar();
-  }
-  return 0;
 }

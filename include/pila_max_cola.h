@@ -42,103 +42,57 @@
  * @date Noviembre 2017
  */
 
-        struct elemento{
-            int ele;    ///< Elemento.
-            int maximo; ///< Máximo asociado a @e ele
-            /**
-             * @brief Constructor por defecto
-             */
-            elemento() : ele(0), maximo(0){}
-            /**
-             * @brief Constructor con parámetros.
-             * @param ele_ int asociado a elemento.
-             * @param max Maximo asociado a elemento.
-             */
-            elemento(const int ele_, const int max): ele(ele_), maximo(max){}
-        };
+struct elemento{
+    int ele;    ///< Elemento.
+    int maximo; ///< Máximo asociado a @e ele
+};
 
 class Pila_max{
     private:
-
-
-        struct Celda{
-            struct elemento elem;    ///< Elemento de información.
-            Celda * siguiente;  ///< Puntero al siguiente nodo.
-
-            /**
-             * @brief Constructor por defecto
-             */
-            Celda() : siguiente(0){}
-            /**
-             * @brief Constructor con parámetros.
-             * @param elem Int de la celda.
-             * @param sig Puntero al siguiente nodo.
-             */
-            Celda(const int elem_, const int max, Celda * sig) : elem(elem_,max), siguiente(sig){}
-
-        };
-        Celda * primera;
-        int num_elem;
-
+        Cola<elemento> queue; ///< Cola que almacenará los elementos.
     public:
-        Cola<elemento> datos; ///< Cola que almacenará los elementos.
         // ---------------  Constructores ----------------
         /**
          * @brief Constructor por defecto
          */
-        Pila_max(): primera(0), num_elem(0){
-        }
+        Pila_max(){};
         /**
          * @brief Constructor de copias
          * @param otra La pila de la que se har� la copia.
          */
-        Pila_max(const Pila_max & otra);
-        // ------------------ Destructor ------------------
-        /**
-         * @brief Destructor
-         */
-        ~Pila_max();
+        Pila_max(const Pila_max & other) : queue(other.queue){};
+
         // --------------- Otras funciones ---------------
         /**
          * @brief Operador de asignaci�n
          * @param otra La pila que se va a asignar.
          */
-        Pila_max& operator= (const Pila_max& otra);
+        Pila_max& operator= (const Pila_max& other){queue = other.queue;}
         /**
          * @brief Comprueba si la pila est� vac�a
          */
-        bool vacia() const{
-        return (primera==0);
-        }
+        bool empty() const{ return queue.vacia(); }
         /**
          * @brief Devuelve el elemento del tope de la pila
          */
-        elemento& tope (){
-        assert(primera!=0);       //Si la pila est� vac�a, abortar
-        return primera->elem; //Devuelve el elemento del tope de la pila
-        }
+        elemento top ();
         /**
          * @brief Devuelve el elemento del tope de una pila constante
          */
-        const elemento & tope () const{
-        assert(primera!=0);       //Si la pila est� vac�a, abortar
-        return primera->elem; //Devuelve el elemento del tope de la pila
-        }
+        const elemento top () const;
         /**
          * @brief A�ade un elemento "encima" del tope de la pila
          * @param elem Elemento que se va a a�adir.
          */
-        void poner(const int elem);
+        void push(int num);
         /**
          * @brief Quita el elemento del tope de la pila
          */
-        void quitar();
+        void pop();
         /**
          * @brief Devuelve el n�mero de elementos de la pila
          */
-        int num_elementos() const{
-        return num_elem;
-        }
+        int size() const{ return queue.num_elementos(); }
 };
 
 #endif // __Pila_H__

@@ -1,6 +1,6 @@
 /**
-  * @file pila.cpp
-  * @brief Implementaci�n del TDA Pila
+  * @file pila_max_cola.cpp
+  * @brief Implementación del TDA Pila
   *
   */
 #include <cassert>
@@ -17,7 +17,8 @@ void Pila_max::push(int num){
     if(empty()){
         aux.maximo=num;
         queue.poner(aux);
-    }else{
+    }
+    else{
         if(queue.frente().maximo < num)
             aux.maximo=num;
         else
@@ -34,8 +35,17 @@ void Pila_max::push(int num){
     }
 }
 
-struct elemento Pila_max::top(){ return queue.frente();}
+//Devuelve referencia al tope de la pila
+struct elemento& Pila_max::top(){ 
+ return queue.frente();
+}
 
-const struct elemento Pila_max::top() const { return queue.frente(); }
+//Devuelve referencia constante al tope de la pila
+const struct elemento& Pila_max::top() const { 
+ return queue.frente(); 
+}
 
-void Pila_max::pop(){ return queue.quitar(); }
+//Elimina el el elemento en el tope de la pila
+void Pila_max::pop(){ 
+ return queue.quitar(); 
+}

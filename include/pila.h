@@ -36,8 +36,8 @@
  * El espacio requerido para el almacenamiento es O(n), donde n es el número de
  * elementos de la Pila.
  *
- * @author Antonio Gámiz Delgado y Elena Merelo Molina 
- * @date Noviembre de 2017
+ * @author Joaquín Fernández Valdivia
+ * @date Octubre de 2011
  */
 template <class T>
 class Pila{

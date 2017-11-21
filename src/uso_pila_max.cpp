@@ -13,11 +13,11 @@ int main(){
   p.push(4);
   p.push(10);
 
-  cout << "Elemento: " << p.top().ele << " Máximo: " << p.top().maximo << endl; p.pop();
-  cout << "Elemento: " << p.top().ele << " Máximo: " << p.top().maximo << endl; p.pop();
-  cout << "Elemento: " << p.top().ele << " Máximo: " << p.top().maximo << endl; p.pop();
-  cout << "Elemento: " << p.top().ele << " Máximo: " << p.top().maximo << endl; p.pop();
-  cout << "Elemento: " << p.top().ele << " Máximo: " << p.top().maximo << endl; p.pop();
-  cout << "Elemento: " << p.top().ele << " Máximo: " << p.top().maximo << endl; p.pop();
+  cout << "Elemento: " << p.top().element << " Máximo: " << p.top().maximo << endl; p.pop();
+  cout << "Elemento: " << p.top().element << " Máximo: " << p.top().maximo << endl; p.pop();
+  cout << "Elemento: " << p.top().element<< " Máximo: " << p.top().maximo << endl; p.pop();
+  cout << "Elemento: " << p.top().element << " Máximo: " << p.top().maximo << endl; p.pop();
+  cout << "Elemento: " << p.top().element << " Máximo: " << p.top().maximo << endl; p.pop();
+  cout << "Elemento: " << p.top().element << " Máximo: " << p.top().maximo << endl; p.pop();
   
 }

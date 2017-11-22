@@ -12,8 +12,8 @@ using namespace std;
 /* _________________________________________________________________________ */
 
 void Pila_max::push(int num){
-    struct elemento aux;
-    aux.ele=num;
+    elemento aux;
+    aux.element=num;
     if(empty()){
         aux.maximo=num;
         queue.poner(aux);
@@ -36,16 +36,16 @@ void Pila_max::push(int num){
 }
 
 //Devuelve referencia al tope de la pila
-struct elemento& Pila_max::top(){ 
+struct elemento& Pila_max::top(){
  return queue.frente();
 }
 
 //Devuelve referencia constante al tope de la pila
-const struct elemento& Pila_max::top() const { 
- return queue.frente(); 
+const struct elemento& Pila_max::top() const {
+ return queue.frente();
 }
 
 //Elimina el el elemento en el tope de la pila
-void Pila_max::pop(){ 
- return queue.quitar(); 
+void Pila_max::pop(){
+ return queue.quitar();
 }

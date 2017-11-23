@@ -35,17 +35,17 @@ void Pila_max::push(int num){
     }
 }
 
-//Devuelve referencia al tope de la pila
+//Devuelve una referencia al tope de la pila
 struct elemento& Pila_max::top(){
  return queue.frente();
 }
 
-//Devuelve referencia constante al tope de la pila
+//Devuelve una referencia constante al tope de la pila
 const struct elemento& Pila_max::top() const {
  return queue.frente();
 }
 
-//Elimina el el elemento en el tope de la pila
+//Elimina el elemento en el tope de la pila
 void Pila_max::pop(){
  return queue.quitar();
 }
